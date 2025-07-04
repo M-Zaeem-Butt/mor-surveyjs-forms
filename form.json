@@ -1,0 +1,85 @@
+{
+  "title": "Lead Information Form",
+  "description": "Please fill in the following details to help us better understand your needs.",
+  "pages": [
+    {
+      "name": "lead_info",
+      "elements": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Full Name",
+          "isRequired": true,
+          "placeHolder": "John Doe"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "Email Address",
+          "inputType": "email",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "email"
+            }
+          ],
+          "placeHolder": "john@example.com"
+        },
+        {
+          "type": "text",
+          "name": "phone",
+          "title": "Phone Number",
+          "inputType": "tel",
+          "isRequired": true,
+          "placeHolder": "+1 555 123 4567",
+          "validators": [
+            {
+              "type": "regex",
+              "text": "Please enter a valid phone number.",
+              "regex": "^\\+?[0-9\\s\\-()]{7,20}$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "organization",
+          "title": "Organization Name",
+          "isRequired": true,
+          "placeHolder": "Your Company LLC"
+        },
+        {
+          "type": "dropdown",
+          "name": "label",
+          "title": "Lead Type",
+          "isRequired": true,
+          "choices": [
+            { "value": "Borrower", "text": "Borrower" },
+            { "value": "MTG Broker", "text": "Mortgage Broker" },
+            { "value": "Investor", "text": "Investor" },
+            { "value": "RE Agent", "text": "Real Estate Agent" }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "deal_size",
+          "title": "Estimated Deal Size ($)",
+          "inputType": "number",
+          "placeHolder": "e.g., 500000",
+          "validators": [
+            {
+              "type": "numeric",
+              "minValue": 0,
+              "text": "Please enter a valid number."
+            }
+          ]
+        },
+        {
+          "type": "comment",
+          "name": "note",
+          "title": "Additional Notes or Requirements",
+          "placeHolder": "Describe any relevant information..."
+        }
+      ]
+    }
+  ]
+}
